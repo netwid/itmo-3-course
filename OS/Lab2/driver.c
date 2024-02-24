@@ -4,6 +4,7 @@
 #include <linux/cdev.h>
 #include <linux/uaccess.h>
 #include <linux/types.h>
+#include <linux/delay.h>
 
 #include "message.h"
 
@@ -12,9 +13,18 @@
 static int major;
 static struct class *cl;
 
+static long failed_get(unsigned long arg, struct rw_monitor_info *info) {
+    info->is_exists = false;
+    if (copy_to_user((struct rw_monitor_info *)arg, info, sizeof(struct rw_monitor_info))) {
+        return -EFAULT;
+    }
+    return -ESRCH;
+}
+
 static long dev_ioctl(struct file *filep, unsigned int cmd, unsigned long arg) {
     struct rw_monitor_info info;
     struct task_struct *t;
+    struct task_io_accounting start_io_acct, end_io_acct;
 
     switch (cmd) {
         case RW_MONITOR_GET_INFO:
@@ -24,11 +34,27 @@ static long dev_ioctl(struct file *filep, unsigned int cmd, unsigned long arg) {
 
             t = get_pid_task(find_get_pid(info.pid), PIDTYPE_PID);
             if (t == NULL) {
-                info.is_exists = false;
-            } else {
-                info.read_bytes = t->ioac.read_bytes;
-                info.write_bytes = t->ioac.write_bytes;
+                return failed_get(arg, &info);
             }
+
+            start_io_acct = t->ioac;
+
+            msleep(1000);
+
+            t = get_pid_task(find_get_pid(info.pid), PIDTYPE_PID);
+            if (t == NULL) {
+                return failed_get(arg, &info);
+            }
+
+            end_io_acct = t->ioac;
+
+            info.read_bytes = end_io_acct.read_bytes;
+            info.write_bytes = end_io_acct.write_bytes;
+            info.rchar = end_io_acct.rchar;
+            info.wchar = end_io_acct.wchar;
+            info.r_diff = end_io_acct.rchar - start_io_acct.rchar;
+            info.w_diff = end_io_acct.wchar - start_io_acct.wchar;
+        
             if (copy_to_user((struct rw_monitor_info *)arg, &info, sizeof(struct rw_monitor_info))) {
                 return -EFAULT;
             }

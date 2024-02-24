@@ -26,8 +26,6 @@ int main(int argc, char *argv[]) {
         exit(-1);
     }
 
-    info.read_bytes = 0;
-    info.write_bytes = 0;
     info.is_exists = true;
     ret_val = ioctl(fd, RW_MONITOR_GET_INFO, &info);
 
@@ -41,7 +39,14 @@ int main(int argc, char *argv[]) {
         printf("task_struct with pid %d doesn't exists\n", info.pid);
         return 0;
     }
-    printf("Data for pid %d\nRead bytes: %lu\nWrite bytes: %lu\n", info.pid, info.read_bytes, info.write_bytes);
+    printf("Data for pid %d\n"
+           "Read bytes: %lu\n"
+           "Write bytes: %lu\n"
+           "Rchar: %lu\n"
+           "Wchar: %lu\n"
+           "Read B/s: %lu\n"
+           "Write B/s: %lu\n",
+           info.pid, info.read_bytes, info.write_bytes, info.rchar, info.wchar, info.r_diff, info.w_diff);
     close(fd);
     return 0;
 }

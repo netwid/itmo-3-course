@@ -6,4 +6,8 @@ struct rw_monitor_info {
     bool is_exists;
     unsigned long read_bytes;
     unsigned long write_bytes;
+    unsigned long rchar;
+    unsigned long wchar;
+    unsigned long r_diff;
+    unsigned long w_diff;
 };
