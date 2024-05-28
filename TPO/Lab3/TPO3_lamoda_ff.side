@@ -1,0 +1,714 @@
+{
+  "id": "bf6fbad7-adad-4d01-a914-2382e7f57fdb",
+  "version": "2.0",
+  "name": "TPO3_lamoda_ff",
+  "url": "https://www.lamoda.ru/",
+  "tests": [{
+    "id": "d7294c39-1674-456f-8b65-5be0246ce23b",
+    "name": "Log out",
+    "commands": [{
+      "id": "c2389492-47ee-49a6-843d-3733dedc9015",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7aa7f140-5b32-441f-9464-a6a79ace40a9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1048",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f88ad802-9f69-4284-98e0-995a30aae653",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.lamoda.ru/customer/account/logout/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e1677bb0-d97a-4b6a-a8da-1d57fc123a9b",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//button[contains(.,'Войти')]",
+      "targets": [
+        ["css=.x-button_secondaryFilledWeb7184", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='vue-root']/div/header/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Войти')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "81073bd6-79fa-4cbc-870e-bdfebb74a88e",
+    "name": "Log in",
+    "commands": [{
+      "id": "17054996-09ce-492e-82f9-b5e4b7e02083",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fa3d877d-15a1-4954-aaa9-ad5270ef7b9a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1048",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "79f959bd-be0c-4b5c-b8d7-c68410853749",
+      "comment": "click Войти button",
+      "command": "click",
+      "target": "xpath=//button",
+      "targets": [
+        ["linkText=Профиль", "linkText"],
+        ["css=.\\_button_1h0fg_13", "css:finder"],
+        ["xpath=//div[@id='vue-root']/div/header/div[2]/div/div/div/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/sales/order/history/')]", "xpath:href"],
+        ["xpath=//span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Профиль')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7ce096bc-0fc8-458a-96bb-61b26a312038",
+      "comment": "wait email field",
+      "command": "waitForElementPresent",
+      "target": "xpath=//form/div[2]/div/div/div/div",
+      "targets": [
+        ["linkText=Профиль", "linkText"],
+        ["css=.\\_button_1h0fg_13", "css:finder"],
+        ["xpath=//div[@id='vue-root']/div/header/div[2]/div/div/div/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/sales/order/history/')]", "xpath:href"],
+        ["xpath=//span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Профиль')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "2f03776b-e383-41fb-a543-97402046ecd6",
+      "comment": "click email field",
+      "command": "click",
+      "target": "xpath=//form/div[2]/div/div/div/div",
+      "targets": [
+        ["linkText=Выйти", "linkText"],
+        ["css=.\\_item_90w2a_2:nth-child(13)", "css:finder"],
+        ["xpath=//a[contains(text(),'Выйти')]", "xpath:link"],
+        ["xpath=//div[@id='popper_7vbt2cj9_zljwlh']/div[2]/div/div/div/div/a[11]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/customer/account/logout/')]", "xpath:href"],
+        ["xpath=//div/div/a[11]", "xpath:position"],
+        ["xpath=//a[contains(.,'Выйти')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a7e37d33-e32b-4376-a5f2-590d582f7131",
+      "comment": "click email input",
+      "command": "click",
+      "target": "xpath=//div[2]/div/div/div/div/div[2]/input",
+      "targets": [
+        ["css=.x-button_secondaryFilledWeb7184", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='vue-root']/div/header/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Войти')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8ecec1d2-4b4d-4170-a5bc-ca5da48f8270",
+      "comment": "type in email input",
+      "command": "type",
+      "target": "xpath=//div[2]/div/div/div/div/div[2]/input",
+      "targets": [],
+      "value": "rotile3904@facais.com"
+    }, {
+      "id": "1d7288ef-8ec9-4fff-951f-0d8c73e29939",
+      "comment": "click password field",
+      "command": "click",
+      "target": "xpath=//form/div[3]/div/div/div",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "db71f30a-7641-4bfb-9fdb-04bdb3a9fd12",
+      "comment": "click password input",
+      "command": "click",
+      "target": "xpath=//div[3]/div/div/div/div/div[2]/input",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1d3f36b9-a8f6-4403-96ed-48b5bca9f092",
+      "comment": "type password",
+      "command": "type",
+      "target": "xpath=//div[3]/div/div/div/div/div[2]/input",
+      "targets": [],
+      "value": "tf%zRv4dQ)-WWB-"
+    }, {
+      "id": "a718a212-0124-481b-a5df-dab8bf1b6cf3",
+      "comment": "click Войти button",
+      "command": "click",
+      "target": "xpath=//div[5]/button",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "df615610-109a-470b-902d-0b1628ce1dee",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "xpath=//a[contains(.,'Профиль')]",
+      "targets": [],
+      "value": "30000"
+    }]
+  }, {
+    "id": "5f0f2694-28a9-4566-a4ff-0b8f313d0149",
+    "name": "Search",
+    "commands": [{
+      "id": "4fbc0190-c6dc-4f28-a6b8-0d91d428de64",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d1ba04ab-ad9a-415a-b21d-395f0801eb27",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1032",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1937a2f3-9d65-4545-aaff-dd8d275e3c0d",
+      "comment": "click search input",
+      "command": "click",
+      "target": "xpath=//input",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bba74a1d-ddc4-4b82-8106-3f45d1ea7ece",
+      "comment": "type 123 in search",
+      "command": "type",
+      "target": "xpath=//input",
+      "targets": [],
+      "value": "123"
+    }, {
+      "id": "5ff44312-6972-4a07-8f2d-2130aad0c76d",
+      "comment": "click search button",
+      "command": "click",
+      "target": "xpath=//button/div",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6c696d15-0f77-4ddd-bc9d-412fff91c85e",
+      "comment": "wait sorting selector",
+      "command": "waitForElementPresent",
+      "target": "xpath=//div[2]/div/div/div/div/div/div/div/div/div[2]/div",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "0682783c-431b-400d-aed7-6266d013173a",
+      "comment": "click sorting selector",
+      "command": "click",
+      "target": "xpath=//div[2]/div/div/div/div/div/div/div/div/div[2]/div",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "491b62c2-c636-4780-b819-575cddbaba42",
+      "comment": "choose sorting price descending",
+      "command": "click",
+      "target": "xpath=//div[3]/div/div/span",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "45d309c3-a599-4912-96be-3d2e54aa7060",
+      "comment": "click category",
+      "command": "click",
+      "target": "xpath=//div[2]/div/div/div/div/a",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ea309f01-d2da-44f8-a0e7-b2dba6680eeb",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,452)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e687f151-11ec-4384-ba98-0c318cb6786f",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//div[2]/div[2]/div/div/div/div/div/div[2]/div",
+      "targets": [],
+      "value": "Lacoste"
+    }]
+  }, {
+    "id": "b34d7e2c-70b1-49a8-a725-4b3bd7c952f0",
+    "name": "AddAndDeleteFromCart",
+    "commands": [{
+      "id": "18da5e7b-404d-44d2-8bc9-484f4cd2bccf",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.lamoda.ru/p/mp002xm005zs/clothes-blacksi-futbolka/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "47a9d199-944c-44a2-b10c-b2da0d988565",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1032",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eb8ab9a7-daf6-45ab-9932-fdf34cb225e4",
+      "comment": "wait modal",
+      "command": "waitForElementPresent",
+      "target": "xpath=//div[8]/div/div/div/div",
+      "targets": [
+        ["css=.icon_cross-thin-white", "css:finder"],
+        ["xpath=//div[@id='modals']/div/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[8]/div/div/div/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "c2ac713a-03fc-4ecf-ab35-6445ea6f88f8",
+      "comment": "close modal",
+      "command": "click",
+      "target": "css=.icon_cross-thin-white",
+      "targets": [
+        ["css=.icon_cross-thin-white", "css:finder"],
+        ["xpath=//div[@id='modals']/div/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[9]/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0a360752-99ea-486b-bcd6-9918a5116e02",
+      "comment": "click choose size",
+      "command": "click",
+      "target": "xpath=//div[2]/div/div[3]/div/div/div/div/div[2]",
+      "targets": [
+        ["css=.\\_arrow_8karg_76", "css:finder"],
+        ["xpath=//div[@id='vue-root']/div/main/div/div[3]/div[2]/div/div[3]/div/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[3]/div/div/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "20471495-97f9-4ddd-a2b9-0489c605bbb5",
+      "comment": "choose size",
+      "command": "click",
+      "target": "xpath=//div[2]/div[2]/div/div/div/div[2]",
+      "targets": [
+        ["css=.\\_colspan_8karg_150:nth-child(1) .\\_twoRow_8karg_198", "css:finder"],
+        ["xpath=//div[@id='vue-root']/div/main/div/div[3]/div[2]/div/div[3]/div/div/div/div[2]/div[2]/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9d3230de-2783-490d-aca3-a13725701d28",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,600)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cba056d3-be4f-4695-b6b1-e31114b7fcb1",
+      "comment": "add in favs",
+      "command": "click",
+      "target": "xpath=//div[5]/div/div/div/div/div[2]/div",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b94c7890-6c92-4ba2-b8ed-3fd1bf0aee2e",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//span[contains(.,'Добавить в корзину')]",
+      "targets": [
+        ["css=.x-button > span", "css:finder"],
+        ["xpath=//div[@id='vue-root']/div/main/div/div[3]/div[2]/div/div[5]/div/div/div/div/div/button/span", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/div/div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Добавить в корзину')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0cabd09d-fc3b-40c3-8667-d2eca4e43b75",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "xpath=//div[5]/div/div/div/div/div/button",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bda71e6d-4c33-4119-9b33-c3c85dd3c481",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "xpath=//div[5]/div/div/div/div/div/button",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "75636fcf-9c1d-4c9b-96e6-e471e9a2bd30",
+      "comment": "click go to cart button",
+      "command": "click",
+      "target": "xpath=//div[6]/div/div/div[4]/a",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "176ed74f-6df9-45c2-ab6e-b6bd007bbe45",
+      "comment": "wait remove from cart button",
+      "command": "waitForElementPresent",
+      "target": "xpath=//span[contains(.,'Перейти к оформлению')]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "85f6cf39-d298-4bdd-b718-99a953960d72",
+      "comment": "click remove from cart button",
+      "command": "click",
+      "target": "xpath=//button/span",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "82b72451-0750-4f38-bda8-20f40b256c90",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "xpath=//button[contains(.,'В избранное')]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "d1b158e3-6f96-416a-a0db-12780c5845de",
+      "comment": "click remove from cart button",
+      "command": "click",
+      "target": "xpath=//div[3]/div/button[2]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f9c8d2b1-d065-46ff-96e8-6d907a485b0e",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "xpath=//a[contains(.,'Перейти в каталог')]",
+      "targets": [
+        ["linkText=Перейти в каталог", "linkText"],
+        ["css=.x-button_link", "css:finder"],
+        ["xpath=//a[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='vue-root']/div/main/div/div/div/form/div/div/div[4]/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/c/4152/default-men/?multigender_page=1&q=123&submit=y')]", "xpath:href"],
+        ["xpath=//div[4]/div/div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Перейти в каталог')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "73f26fa5-887c-4c88-8227-50764553071d",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//div[4]/div/div[2]/div",
+      "targets": [],
+      "value": "В корзине нет товаров"
+    }]
+  }, {
+    "id": "dcdb8413-c4a4-4410-91d4-5933ec2f7d32",
+    "name": "Order",
+    "commands": [{
+      "id": "de8e8c58-2ab4-48ef-8d59-f858b9eb0c29",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.lamoda.ru/p/mp002xm005zs/clothes-blacksi-futbolka/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a37c8a39-4123-46d2-aa8c-67d1aeb949ea",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1032",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1bee66f7-76f6-47b8-948c-3fe48a0c77ce",
+      "comment": "wait modal",
+      "command": "//waitForElementPresent",
+      "target": "xpath=//div[6]/div/div/div/div",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "8ae003b2-285f-4a86-8bdf-93649bc8bc97",
+      "comment": "close modal",
+      "command": "//click",
+      "target": "xpath=//div[6]/div/div/div/div",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0165f003-b7b6-4993-8d8c-588b0f1abc6d",
+      "comment": "click choose size selector",
+      "command": "click",
+      "target": "xpath=//div[2]/div/div[3]/div/div/div/div/div[2]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4e01d514-91a4-4c64-a1e2-3241cfc7d9e4",
+      "comment": "click M size",
+      "command": "click",
+      "target": "xpath=//div[2]/div[2]/div/div/div/div[2]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ae5fa901-41a1-457f-b765-2126c7801980",
+      "comment": "runScript",
+      "command": "runScript",
+      "target": "window.scrollTo(0,600)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "573501a4-58f3-456c-9784-45c8115ad50e",
+      "comment": "click add to cart",
+      "command": "click",
+      "target": "xpath=//div[5]/div/div/div/div/div/button/span",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "81ad36f6-78fc-4da7-ad54-4c83a7d22aca",
+      "comment": "wait go to cart",
+      "command": "waitForElementPresent",
+      "target": "xpath=//div[6]/div/div/div[4]/a",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "635f3c43-2dc7-4e8e-bffb-e64b1f42db20",
+      "comment": "click go to cart",
+      "command": "click",
+      "target": "xpath=//div[6]/div/div/div[4]/a",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "95aab473-0493-457d-9ee1-a3029bd7bafd",
+      "comment": "wait go to order",
+      "command": "waitForElementPresent",
+      "target": "xpath=//div[4]/div/button/span",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "ba3bf0ec-7611-4e9e-aadb-b86655967f43",
+      "comment": "click go to order",
+      "command": "click",
+      "target": "xpath=//div[4]/div/button/span",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ccb3e920-c8b1-4497-bced-27fd0c392f8d",
+      "comment": "wait surname input",
+      "command": "waitForElementPresent",
+      "target": "xpath=//div[4]/div[2]/div/div[2]/div/div/div/div",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "da5ad2f9-0bfe-4111-94aa-0e3557361284",
+      "comment": "click surname input",
+      "command": "click",
+      "target": "xpath=//div[4]/div[2]/div/div[2]/div/div/div/div",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8d3c7ca3-099a-4caf-b1b8-1bbd3f64581c",
+      "comment": "type surname",
+      "command": "type",
+      "target": "xpath=//div[2]/div/div/div/div[2]/input",
+      "targets": [],
+      "value": "Кузьмин"
+    }, {
+      "id": "9856e6c5-73d2-4ac7-bf12-23aacbaa5246",
+      "comment": "click choose pick point",
+      "command": "click",
+      "target": "xpath=//div[2]/div/button",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9bb9039e-22a4-4db4-afc7-0af47f236248",
+      "comment": "wait first pick point",
+      "command": "waitForElementPresent",
+      "target": "xpath=//div/div/div/div[2]/div/div[2]/div/div/div/div/div",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "8b64165a-bb7a-46a4-b674-cffc11c56e34",
+      "comment": "click first pick point",
+      "command": "click",
+      "target": "xpath=//div/div/div/div[2]/div/div[2]/div/div/div/div/div",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8d9bc704-99c6-494e-a50e-1cf9dbc993a8",
+      "comment": "wait pick here",
+      "command": "waitForElementPresent",
+      "target": "xpath=//div[3]/button/span",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "09463776-3945-4dbd-87b7-848a1444b6b8",
+      "comment": "click pick here",
+      "command": "click",
+      "target": "xpath=//div[3]/button/span",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "98612935-8f53-42a5-bec5-3ae881262939",
+      "comment": "wait do order",
+      "command": "waitForElementPresent",
+      "target": "xpath=//span[contains(.,'Оформить заказ')]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "daa75c0a-1efd-49b1-bdc2-3902538a4200",
+      "comment": "wait do order",
+      "command": "waitForElementVisible",
+      "target": "xpath=//span[contains(.,'Оформить заказ')]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "badd0403-cf23-4994-8db0-7ccdd656da4e",
+      "comment": " wait do order",
+      "command": "waitForElementPresent",
+      "target": "xpath=//span[contains(.,'Оформить заказ')]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "c8d27985-1435-489b-bd9f-7664944fa0d7",
+      "comment": "wait do order",
+      "command": "waitForElementPresent",
+      "target": "xpath=//span[contains(.,'Оформить заказ')]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "c63b9929-5261-4cce-b1f0-0e5165ff59af",
+      "comment": "click do order",
+      "command": "click",
+      "target": "xpath=//span[contains(.,'Оформить заказ')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c069915b-83d7-4941-b8bb-798a276af236",
+      "comment": "wait go to orders",
+      "command": "waitForElementPresent",
+      "target": "xpath=//main/div/div/div/div[3]/a",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "78e0b3f6-999a-43dc-a34b-37a0a0fa4f09",
+      "comment": "click go to orders",
+      "command": "click",
+      "target": "xpath=//main/div/div/div/div[3]/a",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7d2eaf69-cbb9-4d67-9fa3-282f5abefdba",
+      "comment": "assert cost",
+      "command": "assertText",
+      "target": "xpath=//div[2]/div[4]/span",
+      "targets": [],
+      "value": "1 090 ₽"
+    }]
+  }, {
+    "id": "b6f13d8c-180b-4789-9317-a06068c7a563",
+    "name": "FavsAddUnadd",
+    "commands": [{
+      "id": "842fab28-e549-4a9a-8ab7-6361898e846d",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.lamoda.ru/p/mp002xm005zs/clothes-blacksi-futbolka/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bbbe6911-7ab3-4ff2-98aa-8c51fb4c884d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1032",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6f69aab7-5655-47c4-990b-df89bbc91f0f",
+      "comment": "",
+      "command": "//runScript",
+      "target": "window.scrollTo(0,600)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6dfd7304-51da-44e8-8b55-390e7c3587dc",
+      "comment": "close modal",
+      "command": "//click",
+      "target": "xpath=//div[6]/div/div/div/div",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c82215a7-ab4f-4d18-8936-ced4f7a059b8",
+      "comment": "click like button",
+      "command": "click",
+      "target": "xpath=//div[5]/div/div/div/div/div[2]/div",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9484359a-770b-4414-9dd4-e2e8fd72b19e",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.lamoda.ru/wishlist/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1036af37-4590-4b4a-a116-ab58daa7a5c9",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.lamoda.ru/wishlist/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f6326d9f-efb2-40c4-b778-e2faa543f6ee",
+      "comment": "wait product card",
+      "command": "waitForElementPresent",
+      "target": "xpath=//a/div/div/div/div",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "0db41650-f650-4731-8205-433335bae0a0",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//a/div/div/div/div",
+      "targets": [
+        ["css=.\\_area_552z7_8", "css:finder"],
+        ["xpath=//div[@id='MP002XM005ZS']/div/a/div/div/div/div", "xpath:idRelative"],
+        ["xpath=//a/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1827898e-e043-4f09-89ca-64bf7df5f4cd",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[5]/div/div/div/div/div[2]/div",
+      "targets": [
+        ["css=.icon_heart-product-added", "css:finder"],
+        ["xpath=//div[@id='vue-root']/div/main/div/div[3]/div[2]/div/div[5]/div/div/div/div/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/div/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6f191de6-62ba-49c8-8fa5-8d3c3ee9251b",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.lamoda.ru/wishlist/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c5b35afe-46bb-43a5-b5dc-04f7fa4b22a0",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.lamoda.ru/wishlist/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "78477b96-174d-4d59-8a3e-f3b11d46ea1f",
+      "comment": "assert no items text",
+      "command": "assertText",
+      "target": "xpath=//div[2]/div/div/div[2]/div",
+      "targets": [],
+      "value": "В избранном нет товаров"
+    }]
+  }],
+  "suites": [{
+    "id": "08c85e99-16de-4603-a0e0-27b5e144b971",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["d7294c39-1674-456f-8b65-5be0246ce23b"]
+  }],
+  "urls": ["https://www.lamoda.ru/", "https://www.lamoda.ru/p/mp002xm005zs/clothes-blacksi-futbolka/"],
+  "plugins": []
+}
