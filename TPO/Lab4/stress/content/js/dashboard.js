@@ -133,7 +133,7 @@ $(document).ready(function() {
         widgets: ['zebra']
     });
 
-    var data = {"OkPercent": 84.8, "KoPercent": 15.2};
+    var data = {"OkPercent": 92.4, "KoPercent": 7.6};
     var dataset = [
         {
             "label" : "FAIL",
@@ -173,7 +173,7 @@ $(document).ready(function() {
     });
 
     // Creates APDEX table
-    createTable($("#apdexTable"), {"supportsControllersDiscrimination": true, "overall": {"data": [0.0, 500, 1500, "Total"], "isController": false}, "titles": ["Apdex", "T (Toleration threshold)", "F (Frustration threshold)", "Label"], "items": [{"data": [0.0, 500, 1500, "config 2 req"], "isController": false}]}, function(index, item){
+    createTable($("#apdexTable"), {"supportsControllersDiscrimination": true, "overall": {"data": [0.073, 500, 1500, "Total"], "isController": false}, "titles": ["Apdex", "T (Toleration threshold)", "F (Frustration threshold)", "Label"], "items": [{"data": [0.073, 500, 1500, "config 3 req"], "isController": false}]}, function(index, item){
         switch(index){
             case 0:
                 item = item.toFixed(3);
@@ -187,7 +187,7 @@ $(document).ready(function() {
     }, [[0, 0]], 3);
 
     // Create statistics table
-    createTable($("#statisticsTable"), {"supportsControllersDiscrimination": true, "overall": {"data": ["Total", 500, 76, 15.2, 10957.906000000003, 1577, 17831, 7075.5, 17631.7, 17731.8, 17811.95, 25.749304768771243, 5.820549876403337, 3.9730372592440006], "isController": false}, "titles": ["Label", "#Samples", "FAIL", "Error %", "Average", "Min", "Max", "Median", "90th pct", "95th pct", "99th pct", "Transactions/s", "Received", "Sent"], "items": [{"data": ["config 2 req", 500, 76, 15.2, 10957.906000000003, 1577, 17831, 7075.5, 17631.7, 17731.8, 17811.95, 25.749304768771243, 5.820549876403337, 3.9730372592440006], "isController": false}]}, function(index, item){
+    createTable($("#statisticsTable"), {"supportsControllersDiscrimination": true, "overall": {"data": ["Total", 500, 38, 7.6, 8199.427999999996, 511, 13860, 12842.0, 13637.9, 13738.8, 13824.96, 33.87304383171872, 7.6492213434049185, 5.226504809972225], "isController": false}, "titles": ["Label", "#Samples", "FAIL", "Error %", "Average", "Min", "Max", "Median", "90th pct", "95th pct", "99th pct", "Transactions/s", "Received", "Sent"], "items": [{"data": ["config 3 req", 500, 38, 7.6, 8199.427999999996, 511, 13860, 12842.0, 13637.9, 13738.8, 13824.96, 33.87304383171872, 7.6492213434049185, 5.226504809972225], "isController": false}]}, function(index, item){
         switch(index){
             // Errors pct
             case 3:
@@ -217,7 +217,7 @@ $(document).ready(function() {
     }, [[0, 0]], 0, summaryTableHeader);
 
     // Create error table
-    createTable($("#errorsTable"), {"supportsControllersDiscrimination": false, "titles": ["Type of error", "Number of errors", "% in errors", "% in all samples"], "items": [{"data": ["503/Service Unavailable", 21, 27.63157894736842, 4.2], "isController": false}, {"data": ["500/Internal Server Error", 55, 72.36842105263158, 11.0], "isController": false}]}, function(index, item){
+    createTable($("#errorsTable"), {"supportsControllersDiscrimination": false, "titles": ["Type of error", "Number of errors", "% in errors", "% in all samples"], "items": [{"data": ["503/Service Unavailable", 11, 28.94736842105263, 2.2], "isController": false}, {"data": ["500/Internal Server Error", 27, 71.05263157894737, 5.4], "isController": false}]}, function(index, item){
         switch(index){
             case 2:
             case 3:
@@ -228,7 +228,7 @@ $(document).ready(function() {
     }, [[1, 1]]);
 
         // Create top5 errors by sampler
-    createTable($("#top5ErrorsBySamplerTable"), {"supportsControllersDiscrimination": false, "overall": {"data": ["Total", 500, 76, "500/Internal Server Error", 55, "503/Service Unavailable", 21, "", "", "", "", "", ""], "isController": false}, "titles": ["Sample", "#Samples", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors"], "items": [{"data": ["config 2 req", 500, 76, "500/Internal Server Error", 55, "503/Service Unavailable", 21, "", "", "", "", "", ""], "isController": false}]}, function(index, item){
+    createTable($("#top5ErrorsBySamplerTable"), {"supportsControllersDiscrimination": false, "overall": {"data": ["Total", 500, 38, "500/Internal Server Error", 27, "503/Service Unavailable", 11, "", "", "", "", "", ""], "isController": false}, "titles": ["Sample", "#Samples", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors"], "items": [{"data": ["config 3 req", 500, 38, "500/Internal Server Error", 27, "503/Service Unavailable", 11, "", "", "", "", "", ""], "isController": false}]}, function(index, item){
         return item;
     }, [[0, 0]], 0);
 

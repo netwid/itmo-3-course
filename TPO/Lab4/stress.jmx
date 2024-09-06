@@ -10,7 +10,7 @@
       <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
     </TestPlan>
     <hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="config 2">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="config 3">
         <intProp name="ThreadGroup.num_threads">500</intProp>
         <intProp name="ThreadGroup.ramp_time">2</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -21,7 +21,7 @@
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="config 2 req">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="config 3 req">
           <stringProp name="HTTPSampler.domain">localhost</stringProp>
           <stringProp name="HTTPSampler.port">8080</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
@@ -48,7 +48,7 @@
               </elementProp>
               <elementProp name="config" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">2</stringProp>
+                <stringProp name="Argument.value">3</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">config</stringProp>
@@ -103,7 +103,7 @@
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table">
+        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -178,7 +178,7 @@
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="total report">
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="total report" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
