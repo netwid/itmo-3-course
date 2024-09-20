@@ -1,0 +1,77 @@
+services:
+  primary:
+    build:
+      context: primary/.
+    restart: always
+    ports:
+      - '13980:13980'
+    environment:
+      SPRING_DATASOURCE_URL_1: jdbc:postgresql://adsDb:5432/adsdb
+      SPRING_DATASOURCE_URL_2: jdbc:postgresql://clientsDb:5432/clientsdb
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+    depends_on:
+      - adsDb
+      - clientsDb
+      - kafka
+
+  stats:
+    build:
+      context: stats/.
+    restart: always
+    ports:
+      - '13981:13981'
+    environment:
+      SPRING_DATASOURCE_URL_1: jdbc:postgresql://statsDb:5432/statsDb
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+    depends_on:
+      - statsDb
+      - kafka
+
+  kafka:
+    image: confluentinc/cp-kafka:7.4.6
+    depends_on:
+      - zookeeper
+    ports:
+      - '9092:9092'
+      - '29092:29092'
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.4.6
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - '2181:2181'
+
+  adsDb:
+    image: postgres:16
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_PASSWORD: postgres
+
+  clientsDb:
+    image: postgres:16
+    restart: always
+    ports:
+      - '5433:5432'
+    environment:
+      POSTGRES_PASSWORD: postgres
+
+  statsDb:
+    image: postgres:16
+    restart: always
+    ports:
+      - '5434:5432'
+    environment:
+      POSTGRES_PASSWORD: postgres
